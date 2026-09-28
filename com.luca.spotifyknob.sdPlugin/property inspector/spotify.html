@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <title>Spotify Knob Control</title>
+    <link rel="stylesheet" href="../static/css/sdpi.css">
+    <link rel="stylesheet" href="../static/extern/slider.css">
+    <script src="../static/utils/common.js"></script>
+    <script src="../static/action.js"></script>
+    <style>
+        .custom-card {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 6px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .btn-group {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .btn-group button {
+            flex: 1;
+            height: 28px;
+            background: #282828;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .btn-group button:hover {
+            background: #1DB954;
+            border-color: #1DB954;
+            color: #000;
+        }
+        .spotify-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+            color: #1DB954;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #888;
+            display: inline-block;
+        }
+        .status-dot.online {
+            background: #1DB954;
+            box-shadow: 0 0 6px #1DB954;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sdpi-wrapper" id="main">
+        <div class="custom-card">
+            <div class="spotify-badge">
+                <span id="statusDot" class="status-dot"></span>
+                <span id="statusText">Spotify Knob Controller</span>
+            </div>
+            <div style="font-size: 11px; color: #aaa; line-height: 1.4;">
+                Controlla la riproduzione e il volume di Spotify direttamente dal Knob rotativo o dai tasti del tuo StreamDock.
+            </div>
+        </div>
+
+        <!-- Volume Step Slider -->
+        <div type="range" class="sdpi-item" id="stepSliderContainer">
+            <div class="sdpi-item-label">Passo Volume</div>
+            <div class="slider-container">
+                <input type="range" class="sdpi-item-value" min="1" max="20" value="5" id="volumeStepInput">
+                <div class="slider-number" id="volumeStepValue">5%</div>
+            </div>
+        </div>
+
+        <!-- Open if closed checkbox -->
+        <div type="checkbox" class="sdpi-item">
+            <div class="sdpi-item-label">Se Chiuso</div>
+            <div class="sdpi-item-value">
+                <span class="sdpi-item-child">
+                    <input id="openIfClosedInput" type="checkbox" checked>
+                    <label for="openIfClosedInput"><span></span>Apri Spotify alla pressione</label>
+                </span>
+            </div>
+        </div>
+
+        <!-- Show volume feedback on LCD -->
+        <div type="checkbox" class="sdpi-item">
+            <div class="sdpi-item-label">Display LCD</div>
+            <div class="sdpi-item-value">
+                <span class="sdpi-item-child">
+                    <input id="showVolumeFeedbackInput" type="checkbox" checked>
+                    <label for="showVolumeFeedbackInput"><span></span>Mostra % volume alla rotazione</label>
+                </span>
+            </div>
+        </div>
+
+        <!-- Volume Mode Select -->
+        <div type="select" class="sdpi-item">
+            <div class="sdpi-item-label">Modalità Volume</div>
+            <select class="sdpi-item-value" id="volumeModeSelect">
+                <option value="app" selected>Volume App Spotify (Consigliato)</option>
+                <option value="master">Volume Generale di Sistema</option>
+                <option value="keys">Tasti Rapidi Spotify (Ctrl+Up/Down)</option>
+            </select>
+        </div>
+
+        <!-- Quick Test Card -->
+        <div class="custom-card">
+            <div style="font-size: 11px; font-weight: 700; color: #ddd; margin-bottom: 6px;">Test Rapido Comandi:</div>
+            <div class="btn-group">
+                <button id="btnPlayPause">⏯ Play / Pausa</button>
+                <button id="btnOpenSpotify">🟢 Apri Spotify</button>
+            </div>
+            <div class="btn-group" style="margin-top: 6px;">
+                <button id="btnPrevTrack">⏮ Brano Prec</button>
+                <button id="btnNextTrack">⏭ Brano Succ</button>
+            </div>
+            <div class="btn-group" style="margin-top: 6px;">
+                <button id="btnToggleTrackMode">🔀 Attiva/Disattiva Modo Brani</button>
+            </div>
+            <div class="btn-group" style="margin-top: 6px;">
+                <button id="btnVolDown">🔉 Vol -</button>
+                <button id="btnVolUp">🔊 Vol +</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="spotify.js"></script>
+</body>
+
+</html>

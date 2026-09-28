@@ -1,0 +1,50 @@
+/* 定义数值标签的位置 */
+.slider-container {
+    position: relative;
+}
+
+.slider-number {
+    position: absolute;
+    top: 30px;
+    /* 初始位置：距离滑动条 30px */
+    left: 50%;
+    /* 居中对齐 */
+    transform: translateX(-50%);
+    /* 居中校正 */
+}
+
+.slider-container {
+    position: relative;
+}
+
+.slider-number {
+    position: absolute;
+    top: -10px;
+    /* 固定位置，避免在 JavaScript 中重复设置 */
+    left: 50%;
+    /* 初始居中 */
+    transform: translateX(-50%);
+    /* 水平居中对齐 */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* 背景颜色，半透明黑色 */
+    color: white;
+    /* 文字颜色 */
+    padding: 2px 6px;
+    /* 较小的内边距，背景仅包裹数字 */
+    border-radius: 5px;
+    /* 边角圆润 */
+    font-weight: bold;
+    /* 文字加粗 */
+    font-size: 12px;
+    /* 调整为更小的字体大小 */
+    line-height: 1;
+    /* 行高调整，使数字更加紧凑 */
+    display: none;
+    /* 初始隐藏 */
+}
+
+.sdpi-item-value {
+    width: 60px;
+    /* 设置输入框的宽度 */
+    text-align: center;
+}

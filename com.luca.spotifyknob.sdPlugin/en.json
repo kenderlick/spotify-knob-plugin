@@ -1,0 +1,20 @@
+{
+  "Description": "Complete Spotify control for StreamDock Knobs and Keys",
+  "Name": "Spotify Controller",
+  "Category": "Spotify",
+  "com.luca.spotifyknob.action": {
+    "Name": "Spotify Knob",
+    "Tooltip": "Press for Play/Pause (or Open Spotify if closed), Rotate to adjust volume"
+  },
+  "Localization": {
+    "Passo Volume": "Volume Step",
+    "Se Chiuso": "If Closed",
+    "Apri Spotify alla pressione": "Open Spotify on press",
+    "Display LCD": "LCD Display",
+    "Mostra % volume alla rotazione": "Show volume % on rotate",
+    "Modalità Volume": "Volume Mode",
+    "Volume App Spotify (Consigliato)": "Spotify App Volume (Recommended)",
+    "Volume Generale di Sistema": "Master System Volume",
+    "Tasti Rapidi Spotify (Ctrl+Up/Down)": "Spotify Shortcuts (Ctrl+Up/Down)"
+  }
+}

@@ -1,0 +1,36 @@
+/* 样式调整：显示数字的框 */
+.slider-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    /* 使容器自适应宽度 */
+}
+
+.slider-number {
+    position: absolute;
+    top: -15px;
+    /* 初始位置，后面会动态调整 */
+    left: 0;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    /* 字体颜色 */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* 半透明黑色背景 */
+    padding: 5px 10px;
+    /* 添加内边距，让数字不紧贴边缘 */
+    border-radius: 5px;
+    /* 圆角效果 */
+    display: none;
+    /* 初始隐藏数字标签 */
+}
+
+.sdpi-item input[type="text"] {
+    width: 100%;
+    /* 让输入框的宽度适应容器 */
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

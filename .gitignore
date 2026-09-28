@@ -1,0 +1,17 @@
+# Logs
+log/
+*/log/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Sample / reference files (keep repo clean)
+sample-file/

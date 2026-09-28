@@ -1,0 +1,50 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/actions/spotify",
+      "Name": "Spotify Knob",
+      "States": [
+        {
+          "Image": "images/actions/spotify"
+        }
+      ],
+      "Controllers": [
+        "Keypad",
+        "Knob"
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Premi per Play/Pausa (o Apri Spotify se chiuso), Ruota per regolare il volume",
+      "UUID": "com.luca.spotifyknob.action",
+      "Settings": {
+        "volumeStep": 5,
+        "openIfClosed": true,
+        "volumeMode": "app",
+        "showVolumeFeedback": true
+      },
+      "PropertyInspectorPath": "property inspector/spotify.html",
+      "OS": [
+        "windows"
+      ],
+      "KeyboardSupport": true
+    }
+  ],
+  "SDKVersion": 1,
+  "Author": "Luca",
+  "Category": "Spotify",
+  "CategoryIcon": "images/actions/categoryIcon",
+  "CodePath": "bin/SpotifyKnob.exe",
+  "CodePathWin": "bin/SpotifyKnob.exe",
+  "Description": "Controllo Spotify per Knob (Rotary Encoder) e tasti StreamDock",
+  "Name": "Spotify Controller",
+  "Icon": "images/icons/pluginIcon",
+  "Version": "1.0.0",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.9"
+  }
+}
